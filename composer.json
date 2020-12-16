@@ -1,0 +1,49 @@
+{
+    "name": "trunks07/youtube-laravel-api",
+    "description": "It is a wrapper over Youtube Api v3 which simplifies functionalities the laravel way.",
+    "keywords": ["trunks07"],
+    "homepage": "https://github.com/trunks07/YoutubeLaravelApi",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mukesh Chandra",
+            "email": "mukesh201722@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Carlo Guevara",
+            "email": "c.guevarra.gca@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "trunks07\\YoutubeLaravelApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "trunks07\\YoutubeLaravelApi\\": "tests"
+        }
+    },
+    "scripts": {
+        "check-style":
+            "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style":
+            "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
