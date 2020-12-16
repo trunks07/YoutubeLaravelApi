@@ -12,12 +12,12 @@
 ## Installation
  
 ```shell
-composer require alchemyguy/youtube-laravel-api
+composer require trunks07/youtube-laravel-api
 ```
 
 Add Service provider to config/app.php provider's array:
 ```php
-alchemyguy\YoutubeLaravelApi\YoutubeLaravelApiServiceProvider::class
+trunks07\YoutubeLaravelApi\YoutubeLaravelApiServiceProvider::class
 ```
 
 Execute the following command to get the configurations:
@@ -53,7 +53,7 @@ php artisan vendor:publish --tag='youtube-config'
 <?php
 namespace Your\App\NameSpace;
 
-use  alchemyguy\YoutubeLaravelApi\AuthenticateService;	
+use  trunks07\YoutubeLaravelApi\AuthenticateService;	
 
 ```
 
@@ -98,7 +98,7 @@ $authResponse['live_streaming_status'] (enabled or disabled)
 <?php
 namespace Your\App\NameSpace;
 
-use  alchemyguy\YoutubeLaravelApi\LiveStreamService;	
+use  trunks07\YoutubeLaravelApi\LiveStreamService;	
 ```
 
 - **Creating a Youtube Event**
@@ -192,7 +192,7 @@ $ytEventObj->transitionEvent($authToken, $youtubeEventId, $broadcastStatus);	// 
 <?php
 namespace Your\App\NameSpace;
 
-use  alchemyguy\YoutubeLaravelApi\ChannelService;
+use  trunks07\YoutubeLaravelApi\ChannelService;
 ```
 
 - **Channel details By Channel Id**
@@ -282,7 +282,7 @@ $response = $channelServiceObject->updateChannelBrandingSettings($googleToken, $
 <?php
 namespace Your\App\NameSpace;
 
-use  alchemyguy\YoutubeLaravelApi\VideoService;
+use  trunks07\YoutubeLaravelApi\VideoService;
 ```
 
 - **List Video By Id**
