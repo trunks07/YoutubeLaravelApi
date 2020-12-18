@@ -28,6 +28,7 @@ class LiveStreamService extends AuthService {
 		$this->googleYoutubeCdnSettings = new \Google_Service_YouTube_CdnSettings;
 		$this->googleYoutubeLiveStream = new \Google_Service_YouTube_LiveStream;
 		$this->googleYoutubeVideoRecordingDetails = new \Google_Service_YouTube_VideoRecordingDetails;
+		$this->googleYoutubeLiveStreamDetails = new \Google_Service_YouTube_LiveBroadcastContentDetails;
 
 	}
 
@@ -84,6 +85,11 @@ class LiveStreamService extends AuthService {
 			$this->googleLiveBroadcastSnippet->setScheduledStartTime($startdtIso);
 
 			/**
+			 * Create an object for the liveBroadcast details
+			 */
+			$this->googleYoutubeLiveStreamDetails->setEnableEmbed(true);
+
+			/**
 			 * object for the liveBroadcast resource's status ["private, public or unlisted"]
 			 */
 			$this->googleLiveBroadcastStatus->setPrivacyStatus($privacy_status);
@@ -94,6 +100,7 @@ class LiveStreamService extends AuthService {
 			$this->googleYoutubeLiveBroadcast->setSnippet($this->googleLiveBroadcastSnippet);
 			$this->googleYoutubeLiveBroadcast->setStatus($this->googleLiveBroadcastStatus);
 			$this->googleYoutubeLiveBroadcast->setKind('youtube#liveBroadcast');
+			$this->googleYoutubeLiveBroadcast->setContentDetails($this->googleYoutubeLiveStreamDetails);
 
 			/**
 			 * Execute Insert LiveBroadcast Resource Api [return an object that contains information about the new broadcast]
